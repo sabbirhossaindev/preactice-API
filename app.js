@@ -10,6 +10,17 @@ const displayPhones = phones => {
     phoneContainer.textContent = '';
     // display phone 10 only.........
     phones = phones.slice(0, 10);
+
+    // display no found message
+    const noPhone = document.getElementById('no-found-message');
+    if (phones.length === 0) {
+        noPhone.classList.remove('d-none');
+    }
+    else {
+        noPhone.classList.add('d-none');
+    }
+
+    // display all phone
     phones.forEach(phone => {
         const phoneDiv = document.createElement('div');
         phoneDiv.classList.add('col');
