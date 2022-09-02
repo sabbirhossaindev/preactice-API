@@ -1,45 +1,97 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I am Hungry</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone hunter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- font awesome link -->
+  <script src="https://kit.fontawesome.com/4e6c12451b.js" crossorigin="anonymous"></script>
 </head>
-</head>
-
-<body>
-    <header>
-        <h1 class="text-center text-warning">Exploring Food</h1>
+<body style="background-color: #254646;">
+    <header class="container mt-3">
+        <h1 class="text-warning text-center mb-3">Welcome my Phone hunter</h1>
     </header>
-    <main>
-        <!-- meal detail container -->
-        <section class="container">
-            <h2>Meal Details</h2>
-            <div id="detail-container" style="width: 25rem;">
-                
+    <main class="container mb-5">
+          <!-- search field container -->
+          <section class="text-center">
+            <div class="mt-5 justify-content-center align-items-center">
+                <input id="search-field" type="email" class="form-control shadow-lg p-3 mb-3 bg-body rounded" id="exampleFormControlInput1"
+                    placeholder="please search your phone name....">
+                <button id="btn-search" class="btn btn-primary mt-4 mb-5 px-5">Search</button>
             </div>
-        </section>
-        <!-- search field -->
-        <section class="text-center mt-5">
-            <input id="search-field" type="text" placeholder="  search your food">
-            <button onclick="searchFood()" class="btn btn-lg btn-primary px-5">Search</button>
-        </section>
-        <!-- search result -->
-        <section class="container">
-            <h2>My Meals</h2>
-            <div id="meal-container" class="row row-cols-1 row-cols-md-3 g-4">
+          </section>
+          <!-- display search result -->
+        <section>
+          <div id="phone-container" class="row row-cols-1 row-cols-md-3 g-4">
+          </div>
 
+          <div id="no-found-message" class="d-none mt-4">
+            <h3 class="text-danger text-center">No phone Found...! Please try a new search.</h3>
+          </div>
+
+          <div id="show-all" class="text-center d-none mt-3 mb-5">
+            <div id="btn-shaw-all" class="btn btn-primary">Show All</div>
+          </div>
+        </section>
+
+        <!-- spinner border -->
+        <section id="loader" class="d-none">
+          <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-success" role="status">
+              <span class="visually-hidden">Loading...</span>
             </div>
+          </div>
+        </section>
+
+        <section>
+            <!-- Modal  start-->
+              <div class="modal fade" id="phoneDetailModal" tabindex="-1" aria-labelledby="phoneDetailModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="phoneDetailModalLabel"></h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div id="phone-details" class="modal-body">
+                          
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+           </div>
+           <!-- Modal end-->
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="js/meals.js"></script>
-</body>
 
+    <!-- footer start -->
+    <footer class="pt-5 pb-5 bg-dark">
+      <div class="container">
+          <div class="row">
+              <div class="footer-area text-center pt-5 pb-5">
+                  <h3 class="fw-bold text-white pb-3"> Phone Hunter </h3>
+                  <p class="px-5 mx-5 text-white">Office 41, Habiganj, Olipur, <br>Sabbir-IT </p>
+                  <p class="text-white">Privacy Police  ||  Terms of use</p>
+                  <p class="text-white"> BY Sabbir Hossain</p>
+                  <div class="d-flex justify-content-center pt-3 gap-4">
+                      <a class="fs-4 text-white" href="https://www.facebook.com/misty.sabbir.3/"><i class="fa-brands fa-facebook"></i></a>
+                      <a class="fs-4 text-white" href="https://www.linkedin.com/in/md-sabbir-hossain-18300b244/"><i class="fa-brands fa-linkedin"></i></a>
+                      <a class="fs-4 text-white" href="https://twitter.com/SabbirDev?t=R6452aM1vfbzsvqiecpy-g&s=09&fbclid=IwAR1vEfS0Fd_5TS-hLf9kSR3H1cUiWc2X_mXQYb3idNmXHJ1Lwp0lm-JJC-c"><i class="fa-brands fa-square-twitter"></i></a>
+                      <a class="fs-4 text-white" href="https://github.com/sabbirvai"><i class="fa-brands fa-square-github"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+    <!-- footer end -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
 </html>
